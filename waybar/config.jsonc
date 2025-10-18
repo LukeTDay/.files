@@ -1,0 +1,205 @@
+{
+    "layer":"top",
+    "position":"top",
+    "height": 30,
+    "spacing": 5,
+    "margin-top": 0,
+    "margin-bottom" : 0,
+
+    "modules-left":[
+        "cpu",
+        "battery",
+        "network"
+    ],
+    "modules-center":[
+        "clock",
+        "clock#time"
+    ],
+    "modules-right":[
+        "custom/vscode",
+        "custom/terminal",
+        "custom/colorpicker",
+        "group/group-firefox",
+        "group/group-power"
+    ],
+
+    "group/group-firefox": {
+        "orientation": "inherit",
+
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/firefoxshow",
+            "custom/github",
+            "custom/youtube",
+            "custom/manga",
+            "custom/firefox"
+        ]
+    },
+    "group/group-power": {
+        "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false
+    },
+    "modules": [
+        "custom/power",
+        "custom/quit",
+        "custom/reboot"
+    ]
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/youtube": {
+        "format": "",
+        "on-click": "firefox --new-tab https://www.youtube.com/",
+        "tooltip": "Launches YouTube"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    },
+
+    "cpu": {
+        "format": "{usage}%  "
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "interval": 60,
+        "format-alt": "{:%r}",
+        "format": "{:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode"
+                    }
+    },
+    "clock#time":{
+        "interval": 1,
+        "format": "{:%r}"
+    },
+    "user": {
+        "format": "Working for: {up_M} minutes"
+    },
+    "custom/firefox": {
+        "format": "",
+        "on-click": "firefox",
+        "tooltip-format": "Launches Firefox"
+    },
+
+    "custom/vscode": {
+        "format": " ",
+        "on-click": "code",
+        "tooltip-format": "Launches VSCODE"
+    },
+
+    "custom/colorpicker" : {
+        "format": "",
+        "tooltip-format": "Launches Hyprpicker",
+        "on-click": "hyprpicker -a"
+    },
+
+    "custom/terminal": {
+        "format": " ",
+        "on-click": "kitty",
+        "tooltip-format": "Launches KTerminal"
+    },
+
+    "custom/manga": {
+        "format":" ",
+        "tooltip-format": "Launches Managa",
+        "on-click": "firefox --new-tab https://www.kenmei.co/dashboard https://comick.dev/"
+    },
+
+    "custom/github": {
+    "return-type": "json",
+    "exec": "python ~/.config/waybar/icon_switcher_github.py",
+    "format": "{icon}",
+    "format-icons": {
+        "default": "",
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": ""
+    },
+    
+    "tooltip-format": "Launches my GitHub",
+    "on-click": "firefox --new-tab https://github.com/LukeTDay firefox"
+    },
+
+    "custom/firefoxshow" : {
+        "return-type": "json",
+        "exec": "python ~/.config/waybar/icon_switcher_firefox_group.py",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": " "
+        },
+            "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "Connected  ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu"
+    },
+
+    "custom/off": {
+        "format":"",
+        "on-click": "shutdown --poweroff"
+    }
+    
+
+
+}

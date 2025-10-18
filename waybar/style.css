@@ -1,0 +1,121 @@
+*{
+    border: none;
+    border-radius: 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 10px;
+}
+
+window#waybar {
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#cpu,
+#battery,
+#clock,
+#clock.time,
+#user,
+#custom-firefox,
+#custom-vscode,
+#custom-terminal,
+#custom-colorpicker,
+#custom-github,
+#network,
+#group-power,
+#custom-quit,
+#custom-reboot,
+#custom-power,
+#custom-manga,
+#group-firefox
+{
+    padding: 0px 10px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: black;
+    color: aquamarine;
+}
+
+
+#cpu {
+    color: #E1C16E;
+}
+
+#battery {
+    color: 	darkturquoise;
+}
+
+#clock {
+    color: 	white;
+}
+
+#clock.time {
+    color: white;
+}
+
+#custom-firefox {
+    color: red;
+}
+
+#custom-vscode {
+    color: darkturquoise;
+}
+
+#custom-terminal {
+    color: #5D3FD3;
+}
+
+#custom-colorpicker {
+    color: pink;
+}
+
+#custom-github {
+    color: gold;
+    min-width: 15px;
+    margin-left: -10px;
+}
+
+#network {
+    color: #AFE1AF ;
+}
+
+#user {
+    color: aliceblue;
+}
+
+#group-power,
+#custom-quit,
+#custom-reboot,
+#custom-power {
+    color: #C21A7E;
+    padding: 0px 5px;
+}
+#custom-firefoxshow {
+    min-width: 15px;
+}
+#custom-firefoxshow.firefox,
+#custom-firefoxshow.youtube {
+    color: red;
+    min-width: 15px;
+    
+}
+#custom-firefoxshow.github {
+    color: gold;
+    min-width: 15px;
+}
+#custom-firefoxshow.manga {
+    color: limegreen;
+    min-width: 15px;
+
+}
+
+#custom-youtube {
+    color: red;
+}
+
+#custom-manga {
+    color: limegreen;
+    margin-right: -14px;
+}
+
