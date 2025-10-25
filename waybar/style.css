@@ -28,7 +28,9 @@ window#waybar {
 #custom-reboot,
 #custom-power,
 #custom-manga,
-#group-firefox
+#group-firefox,
+#custom-discord,
+#pulseaudio
 {
     padding: 0px 10px;
     border-radius: 10px;
@@ -44,6 +46,10 @@ window#waybar {
 
 #battery {
     color: 	darkturquoise;
+}
+
+#pulseaudio {
+    color:#CC5500;
 }
 
 #clock {
@@ -88,7 +94,7 @@ window#waybar {
 #custom-quit,
 #custom-reboot,
 #custom-power {
-    color: #C21A7E;
+    color: red;
     padding: 0px 5px;
 }
 #custom-firefoxshow {
@@ -118,4 +124,17 @@ window#waybar {
     color: limegreen;
     margin-right: -14px;
 }
+
+#custom-quit{
+    color: #C21A7E;
+}
+
+#custom-reboot {
+    color: yellow;
+}
+
+#custom-discord {
+    color: #5865F2;
+}
+
 
